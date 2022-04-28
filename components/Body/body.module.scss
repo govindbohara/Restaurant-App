@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+.search {
+	display: inline-block;
+	margin: 0.5rem 0 0 3.5rem;
+}
+.head {
+	font-size: 20px;
+	font-family: 'PT Serif', serif;
+	font-family: 'Roboto', sans-serif;
+}
+.input {
+	width: 100%;
+	padding: 1rem 2.3rem 0.8rem 0.6rem;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 18px;
+}

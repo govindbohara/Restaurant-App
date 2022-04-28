@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+.navbar {
+	display: flex;
+	justify-content: space-between;
+
+	align-items: center;
+	padding: 0 3rem;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	gap: 3rem;
+}
+.head {
+	font-size: 1.5rem;
+	cursor: pointer;
+
+	.app {
+		color: #6741d9;
+		font-weight: bold;
+	}
+}
+
+.navitems {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	font-size: 1.1rem;
+	font-family: 'PT Serif', serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 600;
+
+	margin-right: 4rem;
+}
+.active {
+	color: #6741d9;
+}
