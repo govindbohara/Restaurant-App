@@ -21,6 +21,11 @@ const Header = props => {
 				<Link href={'/cart'}>
 					<a className={router.pathname == '/cart' ? styles.active : ''}>Cart</a>
 				</Link>
+				<Link href={'/history'}>
+					<a className={router.pathname == '/history' ? styles.active : ''}>
+						History
+					</a>
+				</Link>
 			</div>
 		</nav>
 	);

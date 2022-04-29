@@ -5,7 +5,7 @@ import styles from './body.module.scss';
 
 const Body = props => {
 	const [mealData, setMealData] = useState([]);
-	const [searchData, setSearchData] = useState('chicken');
+	const [searchData, setSearchData] = useState('');
 
 	useEffect(() => {
 		const fetchMealsByName = async () => {

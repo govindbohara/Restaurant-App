@@ -4,7 +4,6 @@ import Header from '../components/Header/Header';
 const Index = () => {
 	return (
 		<>
-			<Header color="#6741d9" />
 			<Body />
 		</>
 	);

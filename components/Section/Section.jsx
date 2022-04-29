@@ -26,6 +26,7 @@ const Section = props => {
 			? storeMeals.find(meal => meal.idMeal === mealID)
 			: false;
 	};
+
 	const mealDesc = props.allMeals.map(data => {
 		return (
 			<div key={data.idMeal} className={styles.panel}>
@@ -41,7 +42,14 @@ const Section = props => {
 				</div>
 
 				<h3 className={styles.price}>Price: Rs.{data.idMeal}</h3>
-				<button className={styles.btn} onClick={() => handleCart(data)}>
+
+				<button
+					value={isAlreadyOnCart(data.idMeal) ? 'Remove from cart' : 'Add to cart'}
+					className={styles.btn}
+					onClick={() => {
+						handleCart(data);
+					}}
+				>
 					{isAlreadyOnCart(data.idMeal) ? 'Remove from cart' : 'Add to cart'}
 				</button>
 			</div>
