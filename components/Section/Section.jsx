@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
+import { toast } from 'react-toastify';
 import styles from './section.module.scss';
 
 const Section = props => {
@@ -10,6 +11,7 @@ const Section = props => {
 		if (typeof window !== 'undefined') {
 			if (!storeMeals.find(meal => meal.idMeal === data.idMeal)) {
 				setStoreMeals([...storeMeals, data]);
+				toast.success('Successfully added to cart');
 				return window.localStorage.setItem(
 					'myMeals',
 					JSON.stringify([...storeMeals, data])
@@ -18,6 +20,7 @@ const Section = props => {
 				const filteredMeals = storeMeals.filter(meal => meal.idMeal !== data.idMeal);
 				setStoreMeals(filteredMeals);
 				localStorage.setItem('myMeals', JSON.stringify(filteredMeals));
+				toast.success('Removed From Cart');
 			}
 		}
 	};

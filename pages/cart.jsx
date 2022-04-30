@@ -1,10 +1,11 @@
 import CartItems from '../components/CartItems/CartItems';
-import Header from '../components/Header/Header';
+import { ToastContainer } from 'react-toastify';
 
 const Cart = () => {
 	return (
 		<>
 			<CartItems />
+			
 		</>
 	);
 };

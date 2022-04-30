@@ -1,19 +1,22 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import styles from './cartitems.module.scss';
 import { toast } from 'react-toastify';
+import styles from './cartitems.module.scss';
 
 const CartItems = () => {
 	const router = useRouter();
 	const [cartItems, setCartItems] = useState(
 		() => JSON.parse(localStorage.getItem('myMeals')) ?? []
 	);
-	console.log(cartItems);
+
+	let length = cartItems.length;
+	console.log(length);
 
 	const removeItem = () => {
 		localStorage.removeItem('myMeals');
 		setCartItems([]);
+		toast.success('Successfully removed items');
 	};
 	const getTotalPrice = () => {
 		let totalPrice = 0;
@@ -30,7 +33,7 @@ const CartItems = () => {
 
 		localStorage.removeItem('myMeals');
 		setCartItems([]);
-		toast.success('Bill paid successfully');
+		toast.success('Your order has been placed');
 	};
 	const cartItem = cartItems.map(cart => {
 		return (
@@ -54,9 +57,11 @@ const CartItems = () => {
 	return (
 		<>
 			<div className={styles.buttons}>
-				<button className={styles.pay} onClick={payNow}>
-					Pay for food
-				</button>
+				{cartItems.length !== 0 && (
+					<button className={styles.pay} onClick={payNow}>
+						Checkout
+					</button>
+				)}
 				<div className={styles.btns}>
 					<button
 						className={styles.add}
@@ -66,9 +71,11 @@ const CartItems = () => {
 					>
 						Add New Item
 					</button>
-					<button className={styles.remove} onClick={removeItem}>
-						Remove Cart Items
-					</button>
+					{cartItems.length !== 0 && (
+						<button className={styles.remove} onClick={removeItem}>
+							Remove Cart Items
+						</button>
+					)}
 				</div>
 			</div>
 
@@ -86,8 +93,6 @@ const CartItems = () => {
 						{cartItem}
 					</>
 				)}
-
-				<div className={styles.info}></div>
 			</div>
 		</>
 	);

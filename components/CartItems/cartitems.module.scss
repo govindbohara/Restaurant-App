@@ -18,6 +18,9 @@
 	cursor: pointer;
 	margin-left: 2rem;
 	color: #fff;
+	&:disabled {
+		background-color: #ccc;
+	}
 }
 .btns {
 	display: flex;
